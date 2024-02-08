@@ -1,0 +1,24 @@
+{
+  "name": "nest-play",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nest-play/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nest-play:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nest-play:build:development"
+        },
+        "production": {
+          "buildTarget": "nest-play:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
