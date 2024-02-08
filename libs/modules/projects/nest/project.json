@@ -1,0 +1,8 @@
+{
+  "name": "projects-module-nest",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/modules/projects/nest/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": []
+}

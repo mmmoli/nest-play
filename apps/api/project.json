@@ -1,21 +1,21 @@
 {
-  "name": "nest-play",
+  "name": "api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nest-play/src",
+  "sourceRoot": "apps/api/src",
   "projectType": "application",
   "targets": {
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "nest-play:build"
+        "buildTarget": "api:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "nest-play:build:development"
+          "buildTarget": "api:build:development"
         },
         "production": {
-          "buildTarget": "nest-play:build:production"
+          "buildTarget": "api:build:production"
         }
       }
     }

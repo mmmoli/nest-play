@@ -1,0 +1,8 @@
+{
+  "name": "projects-module-core",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/modules/projects/core/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": []
+}

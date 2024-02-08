@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@api/projects/core": ["libs/modules/projects/core/src/index.ts"],
+      "@api/projects/nest": ["libs/modules/projects/nest/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
