@@ -17,8 +17,8 @@ export class StartProjectHandler
 {
   private useCase: StartProjectUseCase;
   constructor(
-    @Inject('projectRepo') protected projectRepo: ProjectRepoTrait,
-    protected eventBus: EventBus
+    @Inject('projectRepo') projectRepo: ProjectRepoTrait,
+    private eventBus: EventBus
   ) {
     const afterProjectStartedPolicy = new AfterProjectStartedPolicy();
     this.useCase = new StartProjectUseCase({

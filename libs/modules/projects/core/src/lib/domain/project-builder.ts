@@ -1,9 +1,9 @@
-import { IResult, Fail, ID, Combine } from 'rich-domain';
+import { IResult, Fail, ID, UID, Combine } from 'rich-domain';
 import { Project } from './project-root';
 import { ProjectName } from './name';
 
 export class ProjectBuilder {
-  protected id = ID.create();
+  protected id: UID | undefined;
   protected createdAt: Date | undefined;
   protected updatedAt: Date | undefined;
   protected nameResult: IResult<ProjectName> = ProjectName.create({
@@ -35,7 +35,7 @@ export class ProjectBuilder {
     if (result.isFail()) return Fail(result.error());
 
     return Project.create({
-      id: this.id,
+      id: this.id ?? ID.create(),
       name: this.nameResult.value(),
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
