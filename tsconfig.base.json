@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@api/projects/core": ["libs/modules/projects/core/src/index.ts"],
-      "@api/projects/nest": ["libs/modules/projects/nest/src/index.ts"]
+      "@api/projects/nest": ["libs/modules/projects/nest/src/index.ts"],
+      "@api/projects/shared": ["libs/modules/projects/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
