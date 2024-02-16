@@ -5,8 +5,8 @@ import {
   type IResult,
   EventHandler,
 } from 'rich-domain';
-import { type ProjectRepoTrait, Project } from '../domain';
-import { EventBusTrait, ProjectStartedEvent } from '@api/projects/shared';
+import { type ProjectRepoTrait, Project, ProjectStartedEvent } from '../domain';
+import { EventBusTrait } from '@api/projects/shared';
 
 export interface StartProjectUseCaseDeps {
   projectRepo: ProjectRepoTrait;
@@ -32,16 +32,14 @@ export class StartProjectUseCase
     if (projectResult.isFail()) return Fail(projectResult.error());
     const project = projectResult.value();
 
+    project.addEvent(new ProjectStartedEvent({ eventBus: this.deps.eventBus }));
+
     const saveResult = await this.deps.projectRepo.save(project);
     if (saveResult.isFail()) return Fail(saveResult.error());
 
     project.dispatchEvent(
       'ProjectStartedEvent',
       this.deps.afterProjectStartedPolicy
-    );
-
-    this.deps.eventBus.publish(
-      new ProjectStartedEvent(project.id.value(), project.name)
     );
 
     return Ok();

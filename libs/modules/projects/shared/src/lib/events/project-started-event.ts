@@ -1,6 +1,8 @@
+export interface ProjectStartedEventProps {
+  projectId: string;
+  name: string;
+}
+
 export class ProjectStartedEvent {
-  constructor(
-    public readonly projectId: string,
-    public readonly name: string
-  ) {}
+  constructor(public readonly payload: ProjectStartedEventProps) {}
 }

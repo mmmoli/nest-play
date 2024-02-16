@@ -1,5 +1,5 @@
 import { ProjectName } from './name';
-import { Project } from './project-root';
+import { Project } from './project';
 
 describe('Project Aggregate Root', () => {
   let project: Project;

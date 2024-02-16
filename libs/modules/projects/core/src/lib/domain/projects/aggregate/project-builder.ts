@@ -1,5 +1,5 @@
 import { IResult, Fail, ID, UID, Combine } from 'rich-domain';
-import { Project } from './project-root';
+import { Project } from './project';
 import { ProjectName } from './name';
 
 export class ProjectBuilder {

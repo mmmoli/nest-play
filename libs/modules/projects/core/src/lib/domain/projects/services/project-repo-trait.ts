@@ -1,5 +1,5 @@
 import { IResult } from 'rich-domain';
-import { Project } from './project-root';
+import { Project } from '../aggregate';
 
 export interface ProjectRepoTrait {
   fetchForUserId(userId: string): Promise<IResult<Project[]>>;
